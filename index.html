@@ -1,0 +1,2366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Sivasankari S | Cybersecurity Professional | SOC & SIEM</title>
+  <meta name="description" content="Portfolio of Sivasankari S - Cybersecurity professional at PwC Risk Consulting Advisory specializing in SOC monitoring, SIEM migration (QRadar, Cortex XSIAM, Google SecOps), IS Audit, and digital forensics." />
+  <meta name="keywords" content="Cybersecurity, SOC Analyst, SIEM Migration, IS Audit, IBM QRadar, Cortex XSIAM, Google SecOps, ISO 27701, DPDP Act, CEH, SC-200, AZ-500, PwC" />
+  <meta name="author" content="Sivasankari S" />
+  <meta property="og:title" content="Sivasankari S | Cybersecurity Professional | SOC & SIEM" />
+  <meta property="og:description" content="Cybersecurity professional at PwC Risk Consulting Advisory specializing in SOC monitoring, SIEM migration, IS Audit, and digital forensics." />
+  <meta property="og:type" content="website" />
+  
+  <style>
+    /* -------------------------------------------------------------
+       DESIGN SYSTEM & CSS VARIABLES
+       ------------------------------------------------------------- */
+    :root {
+      /* Theme - Dark (Default Corporate Cybersecurity Theme) */
+      --bg-primary: #0a0f1d;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1b2438;
+      --bg-card: rgba(17, 24, 39, 0.85);
+      --bg-card-hover: rgba(27, 36, 56, 0.95);
+      --border-subtle: rgba(79, 140, 255, 0.12);
+      --border-focus: #3b82f6;
+      
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      
+      --accent-cyan: #06b6d4;
+      --accent-blue: #3b82f6;
+      --accent-indigo: #6366f1;
+      --accent-emerald: #10b981;
+      --accent-glow: rgba(6, 182, 212, 0.15);
+      
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      
+      --nav-height: 72px;
+      --container-max: 1200px;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s ease;
+      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #edf2f7;
+      --bg-card: rgba(255, 255, 255, 0.9);
+      --bg-card-hover: #ffffff;
+      --border-subtle: rgba(59, 130, 246, 0.15);
+      --border-focus: #2563eb;
+      
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      
+      --accent-cyan: #0891b2;
+      --accent-blue: #2563eb;
+      --accent-indigo: #4f46e5;
+      --accent-emerald: #059669;
+      --accent-glow: rgba(37, 99, 235, 0.08);
+      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+    }
+
+    /* -------------------------------------------------------------
+       BASE & RESET
+       ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      position: relative;
+    }
+
+    #cyber-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--text-primary);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-secondary);
+    }
+
+    a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover, a:focus-visible {
+      color: var(--accent-cyan);
+    }
+
+    button, .btn {
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+      font-size: 0.9375rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+      color: #ffffff;
+      box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.45);
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-tertiary);
+      color: var(--text-primary);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-secondary);
+      border-color: var(--border-focus);
+      color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent-cyan);
+      border-color: var(--accent-cyan);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-glow);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    /* -------------------------------------------------------------
+       SECTION HEADER COMPONENT
+       ------------------------------------------------------------- */
+    .section-header {
+      margin-bottom: 3.5rem;
+      text-align: center;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-cyan);
+      background: var(--accent-glow);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.0625rem;
+    }
+
+    /* -------------------------------------------------------------
+       STICKY NAVBAR
+       ------------------------------------------------------------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background: var(--bg-primary);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: background-color var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      padding: 0.5rem 0.25rem;
+      position: relative;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent-cyan);
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent-cyan);
+      border-radius: 2px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color var(--transition-fast);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent-cyan);
+    }
+
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* -------------------------------------------------------------
+       HERO SECTION
+       ------------------------------------------------------------- */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: calc(var(--nav-height) + 2rem);
+      padding-bottom: 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.1);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      margin-bottom: 1.5rem;
+    }
+
+    .pulse-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-emerald);
+      box-shadow: 0 0 8px var(--accent-emerald);
+      animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero-name {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, var(--text-primary) 60%, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-role {
+      font-size: clamp(1.125rem, 2.5vw, 1.35rem);
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 620px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-socials {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+    }
+
+    .hero-socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+    }
+
+    .hero-socials a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* -------------------------------------------------------------
+       HERO PROFILE PHOTO COMPONENT
+       ------------------------------------------------------------- */
+    .profile-photo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-avatar-container {
+      position: relative;
+      width: 290px;
+      height: 290px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+      box-shadow: 0 0 35px rgba(6, 182, 212, 0.35);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+
+    .profile-avatar-container:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 45px rgba(6, 182, 212, 0.5);
+    }
+
+    .profile-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: var(--bg-tertiary);
+      display: block;
+    }
+
+    /* Fallback placeholder if image not found */
+    .profile-avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--bg-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+      font-size: 4rem;
+      font-weight: 700;
+    }
+
+    /* -------------------------------------------------------------
+       ABOUT & SUMMARY SECTION
+       ------------------------------------------------------------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .about-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .about-text {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tech-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      background: var(--bg-tertiary);
+      color: var(--accent-cyan);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* -------------------------------------------------------------
+       APPROACH PILLARS ("How I Approach Security")
+       ------------------------------------------------------------- */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      transition: transform var(--transition-normal), border-color var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-cyan);
+    }
+
+    .pillar-num {
+      font-family: var(--font-mono);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      opacity: 0.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-list {
+      list-style: none;
+    }
+
+    .pillar-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+    }
+
+    /* -------------------------------------------------------------
+       SOC ARCHITECTURE VISUALIZATION
+       ------------------------------------------------------------- */
+    .soc-flow-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 1.5rem;
+      box-shadow: var(--shadow-card);
+      overflow-x: auto;
+    }
+
+    .soc-flow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 900px;
+      position: relative;
+      padding: 1rem 0;
+    }
+
+    .soc-node {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      text-align: center;
+      z-index: 2;
+      transition: all var(--transition-fast);
+      flex: 1;
+      max-width: 120px;
+    }
+
+    .soc-node:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 12px var(--accent-glow);
+      transform: translateY(-3px);
+    }
+
+    .soc-node-title {
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: var(--text-primary);
+    }
+
+    .soc-node-sub {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      margin-top: 0.25rem;
+    }
+
+    .soc-connector {
+      flex: 0 0 24px;
+      height: 2px;
+      background: var(--border-subtle);
+      position: relative;
+    }
+
+    .soc-connector::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      top: -2px;
+      left: 0;
+      animation: packet-flow 2.5s infinite linear;
+    }
+
+    @keyframes packet-flow {
+      0% { left: 0%; opacity: 0; }
+      50% { opacity: 1; }
+      100% { left: 100%; opacity: 0; }
+    }
+
+    /* -------------------------------------------------------------
+       EXPERIENCE SECTION
+       ------------------------------------------------------------- */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20px;
+      width: 2px;
+      background: var(--border-subtle);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 55px;
+      margin-bottom: 3.5rem;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: 11px;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 3px solid var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+    }
+
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .timeline-role {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .timeline-company {
+      font-size: 1.05rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      background: var(--bg-tertiary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .exp-subheading {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+    }
+
+    .exp-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+      font-weight: bold;
+    }
+
+    /* -------------------------------------------------------------
+       SKILLS DASHBOARD
+       ------------------------------------------------------------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .skill-cat-title {
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.75rem;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-pill {
+      font-size: 0.875rem;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .skill-pill:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+      background: var(--accent-glow);
+    }
+
+    .skill-pill-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+    }
+
+    /* -------------------------------------------------------------
+       CERTIFICATIONS SECTION
+       ------------------------------------------------------------- */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-normal);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 8px 24px -4px rgba(59, 130, 246, 0.2);
+    }
+
+    .cert-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--accent-glow);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+      margin-bottom: 1.25rem;
+    }
+
+    .cert-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.35;
+    }
+
+    .cert-issuer {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .cert-badge {
+      align-self: flex-start;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--bg-tertiary);
+      color: var(--accent-emerald);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* -------------------------------------------------------------
+       PROJECTS SECTION
+       ------------------------------------------------------------- */
+    .project-filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.4rem 1.1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-cyan);
+    }
+
+    .project-type-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .project-title {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-details {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-field {
+      margin-bottom: 0.75rem;
+    }
+
+    .project-field strong {
+      display: block;
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-field p {
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    .hardware-diagram {
+      background: var(--bg-tertiary);
+      border: 1px dashed var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin: 1rem 0;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--accent-cyan);
+    }
+
+    .hw-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .hw-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .project-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* -------------------------------------------------------------
+       CLIENT COMMUNICATION SECTION
+       ------------------------------------------------------------- */
+    .comm-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .comm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .comm-topic-list {
+      list-style: none;
+      margin-top: 1.25rem;
+    }
+
+    .comm-topic-item {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .topic-icon {
+      color: var(--accent-cyan);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .topic-info h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .topic-info p {
+      font-size: 0.875rem;
+    }
+
+    /* -------------------------------------------------------------
+       EDUCATION & TECHNICAL STACK
+       ------------------------------------------------------------- */
+    .edu-tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .edu-card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .edu-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-degree {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .edu-year {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--bg-tertiary);
+      color: var(--accent-cyan);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .edu-school {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-score {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--accent-emerald);
+      font-weight: 600;
+    }
+
+    .tech-stack-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .stack-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .stack-group-title {
+      font-size: 0.9375rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      margin-bottom: 0.75rem;
+    }
+
+    /* -------------------------------------------------------------
+       CONTACT SECTION & FOOTER
+       ------------------------------------------------------------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-method h4 {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-method a, .contact-method p {
+      font-size: 1rem;
+      color: var(--text-primary);
+      word-break: break-all;
+    }
+
+    .contact-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.9375rem;
+      transition: border-color var(--transition-fast);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-notice {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      padding: 3rem 0 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-copy {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+      z-index: 999;
+      box-shadow: var(--shadow-card);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--accent-blue);
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      transition: transform var(--transition-normal);
+      z-index: 2000;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* -------------------------------------------------------------
+       RESPONSIVE BREAKPOINTS
+       ------------------------------------------------------------- */
+    @media (max-width: 992px) {
+      .hero-grid, .about-grid, .comm-grid, .edu-tech-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-section {
+        padding-top: calc(var(--nav-height) + 1.5rem);
+      }
+
+      .profile-photo-wrapper {
+        margin-top: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-subtle);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        transform: translateY(-150%);
+        transition: transform var(--transition-normal);
+        box-shadow: var(--shadow-card);
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item {
+        padding-left: 35px;
+      }
+
+      .timeline-marker {
+        left: 1px;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
+
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Sivasankari S Portfolio Home">
+        <span class="brand-dot"></span>
+        <span>Sivasankari S</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#approach" class="nav-link" role="menuitem">Approach</a></li>
+        <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#certifications" class="nav-link" role="menuitem">Certifications</a></li>
+        <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">
+          <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="pulse-indicator"></span>
+          <span>SOC Analyst &amp; Advisory Associate</span>
+        </div>
+        <h1 class="hero-name">Sivasankari S</h1>
+        <p class="hero-role">Cybersecurity Professional | SOC Analyst | SIEM | Security Auditing</p>
+        <p class="hero-desc">
+          Cybersecurity professional at PwC Risk Consulting Advisory with hands-on experience across SOC monitoring, SIEM migration, IS Audit, and digital forensics.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="Sivasankari__resume.pdf" class="btn btn-secondary" download aria-label="sivasankari resume download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Resume
+          </a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
+        <div class="hero-socials">
+          <span>Connect:</span>
+          <a href="mailto:sivasankari8090@gmail.com" id="quick-email-btn" title="Click to copy email">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/sivasankari-s-9a4631319/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/sivasankari1802" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="profile-photo-wrapper">
+        <div class="profile-avatar-container">
+          <img
+            src="sivasankari.jpeg"
+            alt="Sivasankari S"
+            class="profile-avatar-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="profile-avatar-placeholder" style="display: none;">
+            SS
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Background</span>
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="section-desc">Practical security operations, auditing rigor, and client advisory execution.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Security &amp; Advisory Focus</h3>
+          <p class="about-text">
+            I specialize in cybersecurity operations and IT risk management, currently contributing to client engagements at <strong>PwC Risk Consulting Advisory</strong>. My operational experience spans the full lifecycle of defensive security—from setting up and migrating enterprise SIEM architectures to conducting log parsing, normalization, and alert triage.
+          </p>
+          <p class="about-text">
+            In parallel with SOC engineering, I evaluate IT general controls (ITGC), access management, and compliance frameworks such as ISO/IEC 27701 and India's Digital Personal Data Protection (DPDP) Act.
+          </p>
+          <div class="about-tags">
+            <span class="tech-tag">Cybersecurity</span>
+            <span class="tech-tag">SOC Operations</span>
+            <span class="tech-tag">SIEM Migration</span>
+            <span class="tech-tag">IS Audit</span>
+            <span class="tech-tag">Digital Forensics</span>
+            <span class="tech-tag">Privacy &amp; Compliance</span>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3>Core Competencies &amp; Tooling</h3>
+          <p class="about-text">
+            My day-to-day operations involve handling modern security intelligence tooling, investigating authentication anomalies, and conducting digital forensic analyses on suspicious logins.
+          </p>
+          <p class="about-text">
+            I bridge the gap between low-level technical threat data and executive-level governance, presenting complex topics—including quantum computing's cryptographic implications and SBOM methodologies—clearly to enterprise stakeholders.
+          </p>
+          <div class="about-tags">
+            <span class="tech-tag">IBM QRadar</span>
+            <span class="tech-tag">Cortex XSIAM</span>
+            <span class="tech-tag">Google SecOps</span>
+            <span class="tech-tag">ISO/IEC 27701</span>
+            <span class="tech-tag">DPDP Act</span>
+            <span class="tech-tag">Client Presentations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Methodology</span>
+        <h2 class="section-title">How I Approach Security</h2>
+        <p class="section-desc">A structured operational lifecycle built for resilience, compliance, and rapid anomaly isolation.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-num">01</div>
+          <h3>Detect</h3>
+          <ul class="pillar-list">
+            <li>Monitor security events continuously</li>
+            <li>Identify suspicious behavioral patterns</li>
+            <li>Maintain log ingestion integrity</li>
+          </ul>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">02</div>
+          <h3>Investigate</h3>
+          <ul class="pillar-list">
+            <li>Analyze authentication and access logs</li>
+            <li>Investigate anomalous access anomalies</li>
+            <li>Perform digital forensic examinations</li>
+          </ul>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">03</div>
+          <h3>Respond</h3>
+          <ul class="pillar-list">
+            <li>Follow playbook-driven triage models</li>
+            <li>Triage alerts with speed and accuracy</li>
+            <li>Escalate high-priority incidents promptly</li>
+          </ul>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">04</div>
+          <h3>Improve</h3>
+          <ul class="pillar-list">
+            <li>Execute SIEM migrations &amp; collector deployments</li>
+            <li>Onboard and parse custom log sources</li>
+            <li>Enhance compliance and governance controls</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 3.5rem;">
+        <h3 style="text-align: center; margin-bottom: 1.5rem; font-size: 1.25rem;">Enterprise SOC Data-Flow Pipeline</h3>
+        <div class="soc-flow-container">
+          <div class="soc-flow">
+            <div class="soc-node">
+              <div class="soc-node-title">Log Sources</div>
+              <div class="soc-node-sub">Endpoints / Cloud</div>
+            </div>
+            <div class="soc-connector"></div>
+            <div class="soc-node">
+              <div class="soc-node-title">Collectors</div>
+              <div class="soc-node-sub">Syslog / Agents</div>
+            </div>
+            <div class="soc-connector"></div>
+            <div class="soc-node">
+              <div class="soc-node-title">SIEM</div>
+              <div class="soc-node-sub">Parsing &amp; Norm</div>
+            </div>
+            <div class="soc-connector"></div>
+            <div class="soc-node">
+              <div class="soc-node-title">Detection</div>
+              <div class="soc-node-sub">Rule Correlation</div>
+            </div>
+            <div class="soc-connector"></div>
+            <div class="soc-node">
+              <div class="soc-node-title">Alert Triage</div>
+              <div class="soc-node-sub">L1 SOC Filtering</div>
+            </div>
+            <div class="soc-connector"></div>
+            <div class="soc-node">
+              <div class="soc-node-title">Investigation</div>
+              <div class="soc-node-sub">Forensic Scope</div>
+            </div>
+            <div class="soc-connector"></div>
+            <div class="soc-node">
+              <div class="soc-node-title">Escalation</div>
+              <div class="soc-node-sub">Playbook Routed</div>
+            </div>
+            <div class="soc-connector"></div>
+            <div class="soc-node">
+              <div class="soc-node-title">Resolution</div>
+              <div class="soc-node-sub">Remediation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Career Track</span>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-desc">Demonstrated consulting engagements, operational security, and technical quality assurance.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Risk Consulting Advisory</h3>
+                <div class="timeline-company">PwC</div>
+              </div>
+              <span class="timeline-date">Sep 2025 – Present</span>
+            </div>
+
+            <div class="exp-subheading">
+              <span>IS Audit &amp; IT Governance</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Conducted Information Systems (IS) Audit engagements and evaluated IT General Controls (ITGC).</li>
+              <li>Assessed access management controls, user privilege configurations, and compliance against standards.</li>
+            </ul>
+
+            <div class="exp-subheading">
+              <span>SIEM Migration &amp; Log Onboarding</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Participated in end-to-end SOC SIEM migration initiatives across enterprise environments.</li>
+              <li>Executed log collector installations, log source onboarding, log parsing, and data normalization.</li>
+              <li>Worked across enterprise platforms: <strong>IBM QRadar</strong>, <strong>Palo Alto Cortex XSIAM</strong>, and <strong>Google SecOps</strong>.</li>
+            </ul>
+
+            <div class="exp-subheading">
+              <span>SOC Monitoring &amp; Forensic Analysis</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Performed SOC L1 monitoring, alert triage, anomaly detection, and rapid incident escalation.</li>
+              <li>Conducted forensic investigations on suspicious user-login activity and access discrepancies.</li>
+            </ul>
+
+            <div class="exp-subheading">
+              <span>Client Communication &amp; Emerging Tech Awareness</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Delivered client-facing presentations explaining the impact of Quantum Computing on Cryptography and Software Bill of Materials (SBOM) practices.</li>
+              <li>Received consistent client appreciation for dependable project delivery and clear technical communication.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Quality Analyst Intern</h3>
+                <div class="timeline-company">Revotran Technologies</div>
+              </div>
+              <span class="timeline-date">6 Months</span>
+            </div>
+
+            <p style="margin-bottom: 0.75rem; font-size: 0.9375rem;">
+              Contributed to the <strong>OneResi</strong> project, collaborating directly with development teams to assure software functionality, performance, and platform reliability.
+            </p>
+            <ul class="exp-bullets">
+              <li>Executed comprehensive manual and automated testing suites across application modules.</li>
+              <li>Identified, logged, and assisted in bug fixing while optimizing security-relevant scripts.</li>
+              <li>Validated security features and functionality improvements to maintain stable releases.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Capabilities</span>
+        <h2 class="section-title">Cybersecurity Skills Dashboard</h2>
+        <p class="section-desc">Key proficiencies in security operations, governance, incident response, and defense.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category-card">
+          <h3 class="skill-cat-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            SIEM &amp; SOC Operations
+          </h3>
+          <div class="skill-pills">
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>IBM QRadar</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Cortex XSIAM</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Google SecOps</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Log Collector Deployment</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Log Parsing &amp; Normalization</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Alert Triage</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>SOC L1 Monitoring</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <h3 class="skill-cat-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Security Auditing &amp; Compliance
+          </h3>
+          <div class="skill-pills">
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>IS Audit</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>ITGC Assessment</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Access Control Assessment</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>ISO/IEC 27701</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>DPDP Act Framework</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Compliance Evaluation</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <h3 class="skill-cat-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Incident Response &amp; Forensics
+          </h3>
+          <div class="skill-pills">
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Alert Investigation</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Suspicious Login Forensics</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Escalation Workflows</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Playbook-Driven Triage</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Authentication Log Review</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <h3 class="skill-cat-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            Cloud, Identity &amp; Offense
+          </h3>
+          <div class="skill-pills">
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Azure Security Fundamentals</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>AZ-500 Practices</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>SC-200 SecOps Analyst</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>CEH Vulnerability Assessment</span>
+            <span class="skill-pill"><span class="skill-pill-bullet"></span>Attack Techniques Awareness</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Credentials</span>
+        <h2 class="section-title">Certifications &amp; Accreditations</h2>
+        <p class="section-desc">Recognized industry certifications in offensive security, cloud operations, and privacy.</p>
+      </div>
+
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div>
+            <div class="cert-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="cert-name">Certified Ethical Hacker (CEH)</h3>
+            <p class="cert-issuer">EC-Council</p>
+          </div>
+          <span class="cert-badge">Offensive &amp; Threat Assessment</span>
+        </div>
+
+        <div class="cert-card">
+          <div>
+            <div class="cert-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3 class="cert-name">Security Operations Analyst (SC-200)</h3>
+            <p class="cert-issuer">Microsoft</p>
+          </div>
+          <span class="cert-badge">SOC &amp; Threat Mitigation</span>
+        </div>
+
+        <div class="cert-card">
+          <div>
+            <div class="cert-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            </div>
+            <h3 class="cert-name">Azure Security Engineer Associate (AZ-500)</h3>
+            <p class="cert-issuer">Microsoft</p>
+          </div>
+          <span class="cert-badge">Cloud Identity &amp; Security Controls</span>
+        </div>
+
+        <div class="cert-card">
+          <div>
+            <div class="cert-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3 class="cert-name">ISO/IEC 27701</h3>
+            <p class="cert-issuer">Privacy Information Management</p>
+          </div>
+          <span class="cert-badge">Privacy Management Standard</span>
+        </div>
+
+        <div class="cert-card">
+          <div>
+            <div class="cert-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="cert-name">Digital Personal Data Protection (DPDP) Act</h3>
+            <p class="cert-issuer">Executive Training Attended</p>
+          </div>
+          <span class="cert-badge">Data Privacy Governance</span>
+        </div>
+
+        <div class="cert-card">
+          <div>
+            <div class="cert-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="cert-name">Claude certified Associate foundation / Developer</h3>
+            <p class="cert-issuer">Anthropic</p>
+          </div>
+          <span class="cert-badge">Generative AI &amp; Large Language Models</span>
+        </div>
+
+      </div>
+    </div>
+    
+  </section>
+
+  <section id="projects" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Engineering &amp; Research</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-desc">Key technical initiatives covering secure web application architectures and IoT safety hardware.</p>
+      </div>
+
+      <div class="project-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web &amp; Application Security</button>
+        <button class="filter-btn" data-filter="iot">Hardware &amp; IoT</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card" data-category="web">
+          <div>
+            <span class="project-type-tag">Web Application &amp; Secure Access</span>
+            <h3 class="project-title">Scheme Providing Website for Rural Areas</h3>
+            
+            <div class="project-details">
+              <div class="project-field">
+                <strong>Problem:</strong>
+                <p>Rural residents face accessibility barriers and lack centralized platforms to apply for government welfare schemes.</p>
+              </div>
+
+              <div class="project-field">
+                <strong>Solution:</strong>
+                <p>Engineered a direct portal empowering rural communities to discover, apply for, and track eligible government support schemes seamlessly.</p>
+              </div>
+
+              <div class="project-field">
+                <strong>Security Focus:</strong>
+                <p>Configured role-based access control (RBAC), secure administrative dashboard access, and tokenized session management to protect citizen data.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="project-techs">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">JWT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="iot">
+          <div>
+            <span class="project-type-tag">Hardware Safety Device</span>
+            <h3 class="project-title">Anti-Sleeping Glass</h3>
+            
+            <div class="project-details">
+              <div class="project-field">
+                <strong>Problem:</strong>
+                <p>Driver drowsiness and fatigue are major contributing causes to severe roadway accidents during long-distance or late-night driving.</p>
+              </div>
+
+              <div class="project-field">
+                <strong>Solution:</strong>
+                <p>Designed a wearable safety device that monitors eye-blink patterns and triggers immediate audible and visual alerts upon detecting micro-sleep.</p>
+              </div>
+
+              <div class="hardware-diagram">
+                <div>[ Hardware Data Flow Architecture ]</div>
+                <div class="hw-flow">
+                  <span class="hw-box">Infrared Eye Sensor</span>
+                  <span>→</span>
+                  <span class="hw-box">Arduino Nano MCU</span>
+                  <span>→</span>
+                  <span class="hw-box">Buzzer &amp; LED Trigger</span>
+                </div>
+              </div>
+
+              <div class="project-field">
+                <strong>Engineering Focus:</strong>
+                <p>Calibrated infrared optical threshold detection and low-latency interrupt signals directly on embedded firmware for immediate response.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="project-techs">
+              <span class="tech-tag">Arduino Nano</span>
+              <span class="tech-tag">Sensors (IR)</span>
+              <span class="tech-tag">Arduino IDE</span>
+              <span class="tech-tag">Embedded C/C++</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="communication">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Client Engagement</span>
+        <h2 class="section-title">Technical Communication &amp; Advisory</h2>
+        <p class="section-desc">Bridging deep technical concepts with business-critical cybersecurity advisory.</p>
+      </div>
+
+      <div class="comm-card">
+        <div class="comm-grid">
+          <div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Translating Complexity into Strategy</h3>
+            <p style="margin-bottom: 1rem;">
+              Security operations require not only defensive vigilance but also the ability to communicate threat landscapes clearly to enterprise stakeholders, IT leadership, and compliance auditors.
+            </p>
+            <p>
+              At PwC, I deliver briefings on emerging threat vectors and future-proof architectural requirements, ensuring client stakeholders understand both technical risk and remediation steps.
+            </p>
+          </div>
+
+          <div>
+            <ul class="comm-topic-list">
+              <li class="comm-topic-item">
+                <div class="topic-icon">🔐</div>
+                <div class="topic-info">
+                  <h4>Post-Quantum Cryptography Briefings</h4>
+                  <p>Presented the direct impacts of Quantum Computing on contemporary cryptographic ciphers and migration paths.</p>
+                </div>
+              </li>
+
+              <li class="comm-topic-item">
+                <div class="topic-icon">📋</div>
+                <div class="topic-info">
+                  <h4>Software Bill of Materials (SBOM)</h4>
+                  <p>Communicated SBOM management methodologies to enhance supply-chain transparency and vulnerability tracking.</p>
+                </div>
+              </li>
+
+              <li class="comm-topic-item">
+                <div class="topic-icon">👥</div>
+                <div class="topic-info">
+                  <h4>Client Appreciation &amp; Delivery</h4>
+                  <p>Consistently recognized by clients and advisory leadership for reliable execution and clear communication.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Academic &amp; Core Tools</span>
+        <h2 class="section-title">Education &amp; Technical Foundation</h2>
+        <p class="section-desc">Academic milestones along with core programming and query competencies.</p>
+      </div>
+
+      <div class="edu-tech-grid">
+        <div class="edu-card-container">
+          <div class="edu-item">
+            <div class="edu-header">
+              <h3 class="edu-degree">B.Tech – Computer Science and Design</h3>
+              <span class="edu-year">2025</span>
+            </div>
+            <p class="edu-school">Vel Tech University</p>
+            <div class="edu-score">CGPA: 9.09 / 10.0</div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-header">
+              <h3 class="edu-degree">Higher Secondary (12th Grade)</h3>
+              <span class="edu-year">2021</span>
+            </div>
+            <p class="edu-school">Nirmala Matric Higher Secondary School</p>
+            <div class="edu-score">Score: 82%</div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-header">
+              <h3 class="edu-degree">Secondary School (10th Grade)</h3>
+              <span class="edu-year">2019</span>
+            </div>
+            <p class="edu-school">Nirmala Matric Higher Secondary School</p>
+            <div class="edu-score">Score: 76%</div>
+          </div>
+        </div>
+
+        <div class="tech-stack-card">
+          <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">Technical Stack</h3>
+          
+          <div class="stack-group">
+            <div class="stack-group-title">Programming &amp; Scripting</div>
+            <div class="skill-pills">
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>Java (OOP, Exception Handling)</span>
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>Python (Basics &amp; Scripting)</span>
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>SQL (Queries, Joins, Filtering)</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <div class="stack-group-title">Web &amp; Markup</div>
+            <div class="skill-pills">
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>HTML5</span>
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>CSS3</span>
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <div class="stack-group-title">Security Focus Areas</div>
+            <div class="skill-pills">
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>Log Source Configuration</span>
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>ITGC Controls Assessment</span>
+              <span class="skill-pill"><span class="skill-pill-bullet"></span>Authentication Anomaly Forensics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Get In Touch</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-desc">Open for cybersecurity discussions, advisory inquiries, and professional networking.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">Contact Information</h3>
+
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:sivasankari9080@gmail.com" id="copy-email-link" title="Click to copy email">sivasankari9080@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <p>+91-9876543210 (Available on Request)</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </div>
+            <div>
+              <h4>LinkedIn</h4>
+              <a href="https://www.linkedin.com/in/sivasankari-s-9a4631319/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sivasankari-s</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </div>
+            <div>
+              <h4>GitHub</h4>
+              <a href="https://github.com/sivasankari-s" target="_blank" rel="noopener noreferrer">github.com/sivasankari-s</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <form id="portfolio-contact-form">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Full Name</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="Jane Doe" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="jane@company.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject</label>
+              <input type="text" id="contact-subject" class="form-control" placeholder="SOC Inquiry / Professional Networking" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message</label>
+              <textarea id="contact-message" class="form-control" placeholder="Your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Message
+            </button>
+            <p class="form-notice">
+              * Note: In this static build, submitting opens your local email client configured to send directly.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <div style="font-weight: 700; font-size: 1.1rem;">Sivasankari S</div>
+      <p style="font-size: 0.9375rem; color: var(--accent-cyan);">Cybersecurity Professional | SOC Analyst</p>
+      
+      <ul class="footer-links">
+        <li><a href="mailto:sivasankari8090@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/sivasankari-s-9a4631319/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/sivasankari1802" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+
+      <p class="footer-copy">&copy; 2026 Sivasankari S. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to Top" title="Scroll to Top">
+    ▲
+  </button>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Email copied to clipboard!</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      /* --- 1. Canvas Subtle Cybersecurity Matrix/Nodes Background --- */
+      const canvas = document.getElementById("cyber-canvas");
+      const ctx = canvas.getContext("2d");
+      let width, height;
+      let nodes = [];
+
+      function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+
+      class Node {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.45;
+          this.vy = (Math.random() - 0.5) * 0.45;
+          this.radius = 1.5;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(6, 182, 212, 0.4)";
+          ctx.fill();
+        }
+      }
+
+      const nodeCount = Math.min(Math.floor(window.innerWidth / 22), 55);
+      for (let i = 0; i < nodeCount; i++) {
+        nodes.push(new Node());
+      }
+
+      function animateNodes() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < nodes.length; i++) {
+          nodes[i].update();
+          nodes[i].draw();
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 130)})`;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animateNodes);
+      }
+      animateNodes();
+
+      /* --- 2. Theme Toggle (Dark / Light) --- */
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const currentTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", currentTheme);
+
+      themeToggleBtn.addEventListener("click", () => {
+        const theme = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      });
+
+      /* --- 3. Mobile Navigation Hamburger Menu --- */
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburgerBtn.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        hamburgerBtn.setAttribute("aria-expanded", isOpen);
+      });
+
+      navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      /* --- 4. Active Navigation State & Back-to-Top Visibility --- */
+      const sections = document.querySelectorAll("section, header");
+      const navItems = document.querySelectorAll(".nav-link");
+      const backToTop = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        let currentSection = "";
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
+          }
+        });
+
+        if (window.scrollY > 400) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      /* --- 5. Project Filtering --- */
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filter = btn.getAttribute("data-filter");
+
+          projectCards.forEach(card => {
+            if (filter === "all" || card.getAttribute("data-category") === filter) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      /* --- 6. Clipboard Email Copy & Toast Notification --- */
+      const toast = document.getElementById("toast");
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 3000);
+      }
+
+      const emailLinks = [document.getElementById("copy-email-link"), document.getElementById("quick-email-btn")];
+      emailLinks.forEach(elem => {
+        if (!elem) return;
+        elem.addEventListener("click", (e) => {
+          e.preventDefault();
+          const email = "sivasankari8090@gmail.com";
+          navigator.clipboard.writeText(email).then(() => {
+            showToast("Copied email to clipboard: " + email);
+          }).catch(() => {
+            window.location.href = "mailto:" + email;
+          });
+        });
+      });
+
+      /* --- 7. Contact Form Mailto Handler --- */
+      const contactForm = document.getElementById("portfolio-contact-form");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("contact-name").value;
+        const email = document.getElementById("contact-email").value;
+        const subject = document.getElementById("contact-subject").value;
+        const message = document.getElementById("contact-message").value;
+
+        const bodyContent = `Sender: ${name} (%0D%0AEmail: ${email})%0D%0A%0D%0AMessage:%0D%0A${message}`;
+        window.location.href = `mailto:sivasankari8090@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+        showToast("Opening email client to send message...");
+      });
+    });
+  </script>
+</body>
+</html>
